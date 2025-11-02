@@ -1,9 +1,15 @@
-<!-- Consola visible -->
+<!-- Logs en pantalla -->
 <div style="background:#111; color:#0f0; padding:6px; font-size:12px; max-height:120px; overflow:auto;">
   <div *ngFor="let l of logs">{{ l }}</div>
 </div>
 
-<a-scene embedded arjs="trackingMethod: best; sourceType: webcam;">
-  <a-marker preset="hiro"></a-marker>
+<a-scene
+  vr-mode-ui="enabled: false"
+  embedded
+  renderer="logarithmicDepthBuffer: true;"
+  arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
+  
+  <a-marker id="marker" preset="hiro"></a-marker>
+
   <a-entity camera></a-entity>
 </a-scene>
