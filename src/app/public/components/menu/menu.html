@@ -1,0 +1,26 @@
+<h1>Menú del Restaurante</h1>
+
+<h1 style="color: red">✅ EL MENÚ SE ESTÁ MOSTRANDO</h1>
+
+<!-- loading / error / list flow -->
+<section *ngIf="!errorMessage">
+  <ng-container *ngIf="platillos?.length; else loading">
+    <div *ngFor="let item of platillos" class="menu-item">
+      <h2>{{ item.nombre }} — ${{ item.precio }}</h2>
+      <img [src]="item.imagen" [alt]="item.nombre" style="max-width:240px; display:block; margin-bottom:0.5rem;" />
+      <p>
+        <button (click)="verEnAR(item.modelo3d)">Ver en AR</button>
+      </p>
+      <hr />
+    </div>
+  </ng-container>
+</section>
+
+<ng-template #loading>
+  <p>Cargando menú...</p>
+</ng-template>
+ 
+<!-- Error message visible in the UI -->
+<div *ngIf="errorMessage" class="error">
+  <p style="color: darkred">{{ errorMessage }}</p>
+</div>
