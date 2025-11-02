@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "nombre": "Ostiones",
+    "precio": 180,
+    "imagen": "https://menu-ar-3d-models.s3.us-east-2.amazonaws.com/DSC00813.jpeg",
+    "modelo3d": "https://menu-ar-3d-models.s3.us-east-2.amazonaws.com/Untitled.glb"
+  }
+]
